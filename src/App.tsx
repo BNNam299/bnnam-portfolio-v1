@@ -1287,7 +1287,7 @@ export default function App() {
             </ul>
 
             <a
-              href="https://drive.google.com/file/d/1-0jp6SN-CYT-0l4rGDZq6fCXaBYpShOt/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1-0jp6SN-CYT-0l4rGDZq6fCXaBYpShOt/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor-label="Xem CV"
