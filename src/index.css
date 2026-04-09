@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Unbounded:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Unbounded", sans-serif;
+  --font-sans: "Google Sans", sans-serif;
+  --font-hand: "Caveat", cursive;
+  
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-accent: #00A3FF;
+  --color-accent-soft: rgba(0, 163, 255, 0.1);
+}
+
+:root {
+  --bg: #FFFFFF;
+  --ink: #000000;
+  --ink-light: #666666;
+}
+
+.dark {
+  --bg: #000000;
+  --ink: #FFFFFF;
+  --ink-light: #999999;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans antialiased transition-colors duration-300;
+  }
+  
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  .t-display {
+    @apply font-display font-black text-[clamp(52px,9vw,112px)] leading-[0.88] tracking-[-0.04em];
+  }
+  .t-h1 {
+    @apply font-display font-extrabold text-[clamp(36px,5vw,62px)] leading-[1.1] tracking-[-0.03em];
+  }
+  .t-h2 {
+    @apply font-sans font-bold text-[clamp(26px,4vw,38px)] leading-[1.2] tracking-[-0.02em];
+  }
+  .t-h3 {
+    @apply font-sans font-bold text-[28px] leading-[1.2] tracking-[-0.01em];
+  }
+  .t-stat {
+    @apply font-sans font-black text-[36px] leading-none tracking-[-0.02em];
+  }
+  .t-nav-logo {
+    @apply font-sans font-black text-[22px] tracking-[-0.02em];
+  }
+  .t-lead {
+    @apply font-sans font-light text-[18px] leading-[1.8] text-ink-light;
+  }
+  .t-body {
+    @apply font-sans font-normal text-[15px] leading-[1.6];
+  }
+  .t-body-sm {
+    @apply font-sans font-normal text-[13px] leading-[1.6] text-ink-light;
+  }
+  .t-btn {
+    @apply font-sans font-semibold text-[15px] tracking-[0.02em];
+  }
+  .t-nav-link {
+    @apply font-sans font-medium text-[14px] tracking-[0.02em] text-ink-light;
+  }
+  .t-label {
+    @apply font-sans font-bold text-[12px] tracking-[0.15em] uppercase text-accent;
+  }
+  .t-tag {
+    @apply font-sans font-semibold text-[11px] tracking-[0.1em] uppercase;
+  }
+  .t-caption {
+    @apply font-sans font-normal text-[12px] tracking-[0.05em] uppercase text-ink-light;
+  }
+  .dot-grid {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .google-sans-custom {
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .mask-fade-edges {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  @keyframes wave-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animate-wave-gradient {
+    background-size: 200% 200%;
+    animation: wave-gradient 3s ease infinite;
+  }
+}
